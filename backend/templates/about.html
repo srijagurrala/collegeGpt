@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - VBIT</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* General Styles */
+      body {
+        background-color: black;
+        color: white;
+        font-family: Manrope, sans-serif;
+        text-align: center;
+        margin: 0;
+      }
+      .header {
+        background: black;
+        text-align: right;
+        padding: 10px 20px;
+      }
+      .nav-links {
+        color: white;
+        font-family: Calibri;
+        font-size: 20px;
+      }
+      .button {
+        margin-left: 16px;
+        border-radius: 15px;
+        padding: 6px 10px;
+        background-color: red;
+        border: none;
+        font-size: 20px;
+        font-family: Calibri;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 60px;
+        font-family: "Georgia", Times, serif;
+        margin-top: 80px;
+      }
+      h2 {
+        text-align: center;
+      }
+      .about-content {
+        max-width: 800px;
+        margin: 40px auto;
+        text-align: left;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .about-content h2 {
+        color: #ffcc00;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      .about-content p,
+      .about-content li {
+        color: #ddd;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .about-content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .about-content ul li {
+        margin: 8px 0;
+      }
+      .about-content img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}">HOME</a>&nbsp;
+        <a href="{{ url_for('courses') }}">COURSES</a>&nbsp;
+        <a href="{{ url_for('clubs') }}">CLUBS</a>&nbsp;
+        <a href="{{ url_for('signup') }}">
+          <button class="button">SIGN UP</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- About Us Section -->
+    <h1>About VBIT</h1>
+    <div class="about-content">
+      <h2>Academic Excellence</h2>
+      <p>
+        Welcome to Vignana Bharathi Institute of Technology, one of the best
+        engineering colleges in Telangana, known for its commitment to producing
+        versatile leaders and nurturing technical talent.
+      </p>
+
+      <p>
+        At VBIT, we redefine excellence. Sponsored by Swami Vivekananda
+        Educational Trust (SVET), we provide students with abundant
+        opportunities to realize their ambitions, foster new ideas, and bring
+        innovative projects to life. Established in 2004, VBIT has emerged as a
+        hub of engineering excellence and is on a mission to offer
+        industry-aligned engineering education.
+      </p>
+
+      <h3>Our Vision</h3>
+      <p>
+        To emerge as a premier institution for technical education and be
+        recognized as a center of excellence in Research and Development.
+      </p>
+
+      <h3>Our Mission</h3>
+      <p>
+        To build a strong institute by consistently providing state-of-the-art
+        infrastructure and world-class faculty, delivering need-based technical
+        education.
+      </p>
+
+      <h3>Our Commitment to Research</h3>
+      <p>
+        At VBIT, conceptual teaching is integrated with Research and
+        Development, enabling our students to graduate as competent, employable
+        engineers with a broad outlook on global engineering challenges.
+      </p>
+
+      <!-- Replace with the correct path to the image -->
+      <img
+        <img
+        src="{{ url_for('static', filename='images/vbitcollege.jpg') }}"
+        alt="VBIT Campus"
+      />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - CollegeGPT</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Manrope, sans-serif;
+        text-align: center;
+      }
+
+      .header {
+        background: black;
+        text-align: right;
+        padding: 10px 20px;
+      }
+
+      .nav-links {
+        color: white;
+        font-family: Calibri;
+        font-size: 20px;
+      }
+
+      .button {
+        margin-left: 10px;
+        border-radius: 15px;
+        padding: 6px 10px;
+        background-color: red;
+        border: none;
+        font-size: 20px;
+        font-family: Calibri;
+        cursor: pointer;
+      }
+
+      h1 {
+        font-size: 50px;
+        font-family: "Times New Roman", Times, serif;
+        margin-top: 80px;
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        color: gray;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+
+      h4 {
+        color: gray;
+        font-style: italic;
+      }
+
+      .inputfield {
+        margin: 40px 0;
+      }
+
+      .inputwidth {
+        width: 50%;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 40px;
+        border: 1px solid #ccc;
+      }
+
+      .send-button {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .results {
+        margin-top: 20px;
+      }
+
+      .result-item {
+  padding: 20px;
+  background: #1e1e1e; /* Slightly lighter black for contrast */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Space between items */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1); /* Smooth shadow effect */
+  color: white; /* Text color */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #444; /* Subtle border for definition */
+  transition: transform 0.2s, box-shadow 0.2s; /* Add a hover effect */
+}
+
+.result-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.result-item h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6f61; /* Accent color for titles */
+}
+
+.result-item p {
+  font-size: 16px; /* Standard readable size */
+  line-height: 1.8; /* Increased for better readability */
+  color: #dcdcdc; /* Softer white for readability */
+  white-space: pre-wrap; /* Preserve line breaks and spaces from the PDF content */
+  text-align: justify; /* Align text for a clean block structure */
+  padding: 10px; /* Add padding to give content breathing room */
+  background-color: #222; /* Subtle background for text area */
+  border-radius: 5px; /* Slightly rounded corners for a polished look */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Inner shadow for a document-like effect */
+  overflow-wrap: break-word; /* Ensure long words or URLs break properly */
+  margin-left: 690px;
+}
+
+
+
+
+      .disabled {
+        background-color: #888;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}">HOME</a>&nbsp;
+        <a href="/signup"><button class="button">SIGN UP</button></a>
+      </div>
+    </div>
+
+    <h1>Meet CollegeGPT: Your Ultimate College Companion</h1>
+    <h2>
+      Get personalized academic support and campus resources all in one place.
+    </h2>
+
+    <!-- Search input field -->
+    <div class="inputfield">
+      <form action="/landingpage" method="POST">
+        <input
+          type="text"
+          name="query"
+          placeholder="Search..."
+          class="inputwidth"
+          {%
+          if
+          not
+          user_authenticated
+          %}disabled{%
+          endif
+          %}
+          required
+        />
+        <button
+          class="send-button {% if not user_authenticated %}disabled{% endif %}"
+          type="submit"
+        >
+          <b>&uarr;</b>
+        </button>
+      </form>
+    </div>
+
+    <div class="results">
+      {% if results %}
+      <h2>Search Results:</h2>
+      {% for result in results %}
+      <div class="result-item">
+        <!-- <h3>{{ result.title }}</h3> -->
+        <p>{{ result.content }}</p>
+      </div>
+      {% endfor %} {% else %}
+      <h4>No results found.</h4>
+      {% endif %}
+    </div>
+  </body>
+</html>

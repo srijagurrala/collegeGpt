@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to CollegeGPT</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* General Styles */
+      body {
+        background-color: black;
+        color: white;
+        font-family: Manrope, sans-serif;
+        text-align: center;
+        margin: 0;
+      }
+      .header {
+        background: black;
+        text-align: right;
+        padding: 10px 20px;
+      }
+      .nav-links {
+        color: white;
+        font-family: Calibri;
+        font-size: 20px;
+      }
+      .button {
+        margin-left: 16px;
+        border-radius: 15px;
+        padding: 6px 10px;
+        background-color: red;
+        border: none;
+        font-size: 20px;
+        font-family: Calibri;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 80px;
+        font-family: "Georgia", Times, serif;
+        margin-top: 160px;
+      }
+      h2 {
+        color: gray;
+        font-size: 32px;
+        font-family: Times, serif;
+        text-align:center;
+        margin-bottom: 15px;
+      }
+      h3{
+        color:orange;
+      }
+      .intro-section {
+        margin-top: 50px;
+      }
+      .nav-buttons {
+        margin-top: 50px;
+      }
+      .nav-buttons button {
+        margin: 10px;
+        padding: 12px 20px;
+        background-color: red;
+        border-radius: 16px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+      }
+      .nav-buttons button:hover {
+        background-color: #ffdd00;
+      }
+
+      
+
+      /* Departments Section */
+      .departments {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 8px;
+        color: white;
+        max-width: 800px;
+        margin: 40px auto;
+        text-align: left;
+      }
+      .department-list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .department-list li {
+        font-size: 18px;
+        line-height: 1.6;
+        padding: 10px;
+        border-bottom: 1px solid #444;
+      }
+      .department-list li:last-child {
+        border-bottom: none;
+      }
+      .department-list li a {
+        color: #ffcc00;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .department-list li a:hover {
+        text-decoration: underline;
+      }
+      .department-details {
+        display: none;
+        line-height: 1.5;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #444;
+        border-radius: 8px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}">HOME</a>&nbsp;
+        <a href="{{ url_for('about') }}">ABOUT</a>&nbsp;
+        <a href="{{ url_for('clubs') }}">CLUBS</a>&nbsp;
+        <button class="button">SIGN UP</button>
+      </div>
+    </div>
+
+    <!-- Departments Section -->
+    <div class="departments">
+      <h2>DEPARTMENTS</h2>
+      <ul class="department-list">
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('cse')"
+            >Computer Science & Engineering</a
+          >
+        </li>
+        <div id="cse" class="department-details">
+          <h3>Computer Science & Engineering</h3>
+          <p>
+            The Department of Computer Science and Engineering (CSE) was
+            established in the year 2004 with the aim of providing inclusive
+            technology education to students from all over India and the world
+            and thereby creating responsible citizens who would contribute to
+            the betterment of their families, society and nation. The vision of
+            CSE department is to emerge as a world class technology department
+            through education, innovation and collaborative research. The
+            department has progressed with a vision and a strong commitment to
+            developing competent programmers with uncompromising standard of
+            excellence in the training, both class room sessions and hands on
+            sessions, given to students. The department has well equipped
+            computing laboratories and a rich repository of software covering a
+            wide spectrum of applications.
+          </p>
+        </div>
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('ai')"
+            >CSE (Artificial Intelligence & Machine Learning)</a
+          >
+        </li>
+        <div id="ai" class="department-details">
+          <h3>CSE (Artificial Intelligence & Machine Learning)</h3>
+          <p>The Department of Computer Science and Engineering (CSE – AI&ML) was established in the year 2020 with the aim of providing inclusive technology education to students from all over India and the world and thereby creating responsible citizens who would contribute to the betterment of their families, society and nation.
+            The vision of CSE department is to emerge as a world class technology department through education, innovation and collaborative research.
+            The department has progressed with a vision and a strong commitment to developing competent programmers with uncompromising standard of excellence in the training, both class room sessions and hands on sessions, given to students.
+            The department has well equipped computing laboratories and a rich repository of software covering a wide spectrum of applications.</p>
+        </div>
+
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('ds')"
+            >CSE (Data Science)</a
+          >
+        </li>
+        <div id="ds" class="department-details">
+            <h3>CSE (Data Science)</h3>
+            <p>The Department of Computer Science and Engineering (CSE – DS) was established in the year 2020 with the aim of providing inclusive technology education to students from all over India and the world and thereby creating responsible citizens who would contribute to the betterment of their families, society and nation.
+                The vision of CSE department is to emerge as a world class technology department through education, innovation and collaborative research.
+                The department has progressed with a vision and a strong commitment to developing competent programmers with uncompromising standard of excellence in the training, both class room sessions and hands on sessions, given to students.
+                The department has well equipped computing laboratories and a rich repository of software covering a wide spectrum of applications.
+                
+                </p>
+          </div>
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('cs')"
+            >CSE (Cyber Security)</a
+          >
+        </li>
+        <div id="cs" class="department-details">
+            <h3>CSE (Cyber Security)</h3>
+            <p>The Department of Computer Science and Engineering (CSE – CS) was established in the year 2020 with the aim of providing inclusive technology education to students from all over India and the world and thereby creating responsible citizens who would contribute to the betterment of their families, society and nation.
+                The vision of CSE department is to emerge as a world class technology department through education, innovation and collaborative research.
+                The department has progressed with a vision and a strong commitment to developing competent programmers with uncompromising standard of excellence in the training, both class room sessions and hands on sessions, given to students.
+                The department has well equipped computing laboratories and a rich repository of software covering a wide spectrum of applications.</p>
+          </div>
+
+
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('csbs')"
+            >Computer Science & Business System</a
+          >
+        </li>
+
+        <div id="csbs" class="department-details">
+            <h3>Computer Science & Business System</h3>
+            <p>Computer Science and Business System (CSBS) was established in the year 2020 with the aim of providing inclusive technology education to students from all over India and the world and thereby creating responsible citizens who would contribute to the betterment of their families, society and nation.
+                The vision of CSE department is to emerge as a world class technology department through education, innovation and collaborative research.
+                The department has progressed with a vision and a strong commitment to developing competent programmers with uncompromising standard of excellence in the training, both class room sessions and hands on sessions, given to students.
+                The department has well equipped computing laboratories and a rich repository of software covering a wide spectrum of applications.</p>
+          </div>
+
+
+
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('civil')"
+            >Civil Engineering</a
+          >
+        </li>
+        <div id="civil" class="department-details">
+            <h3>Civil Engineering</h3>
+            <p>The department has been imparting quality education to meet the technological advancement and industrial requirements. This has been made possible due to qualified and dedicated faculty, state of the art laboratories and infrastructure facilities.
+                The strength of department is attributed to learning oriented pedagogical practices by the experienced and committed faculty from diversified facets of Civil Engineering.
+                With the concurrent acquisition of technical skills in labs, inspiration and awakening of the young minds by vibrant faculty, the students are engaged intellectually, in the college.  These critical contributions lead the students to explore and discover the wonders of their minds, which in turn synergize together and enable the students transform themselves to become true engineers and technologists.
+                
+                The department mission is to serve society, the public sector, and private industry by:
+                Providing undergraduate civil engineering education that prepares students to apply engineering knowledge to the diverse issues of resources, infrastructure and the built environment.
+                Producing engineers with self-confidence and overall personality who can be self employed and generate employment opportunities to fellow engineers and take active part in nation building, keeping in view the challenges of the future
+                Promoting innovative and original thinking in the minds of budding engineers to face the challenges of future.</p>
+          </div>
+
+          
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('ece')"
+            >Electronics & Communication Engineering</a
+          >
+        </li>
+        <div id="ece" class="department-details">
+            <h3>Electronics & Communication Engineering</h3>
+            <p>In order to meet the wide ranging, challenging and very rapidly growing Global Demands for “Professional Electronics and Communication Engineers” in this Hi-Tech Era, the Department of “Electronics and Communication Engineering” was established .
+                The Objective of the Institution is to impart “Quality Engineering Education” and promote the growth of effective, efficient and true Professionals, through adherence of the highest Standards of Academic Integrity and overall Ethical conduct, to develop a sense of Individual Responsibility and also to collectively Participate in reinforcing and maintaining an Environment of Honor, Trust and Standards.
+                The Department strives to develop long Term relationships with Industries and market the Student’s Talents effectively. The Students are thus provided high level ‘Leads and Pathways’ that enable them to gain access to a broad range of ‘high potential’ and ‘hi-tech’ Career Opportunities.</p>
+          </div>
+
+       
+
+
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('eee')"
+            >Electrical & Electronics Engineering</a
+          >
+        </li>
+        <div id="eee" class="department-details">
+            <h3>Electrical & Electronics Engineering</h3>
+            <p>Harnessing electrical energy is the challenge for electrical engineers. The power packed EEE department inspires the budding Electrical Engineers with the potent idea of constructing Generating Stations, Transmission Lines and Distribution Systems at economic rates and to design, test and supervise the manufacture of Electrical and Electronic equipments used in electrical utilities, buildings, automobiles, air-crafts, radar, navigation system and broadcast and communication systems.
+                The Department maintains high quality of teaching and learning process with the help of well qualified faculty members.
+                Laboratories are well equipped. Good exposure is given to all the students to update their practical knowledge with the help of technically strong instructors. The Department is tuned for conducting research activities in Electrical Power Sector</p>
+          </div>
+        
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('it')"
+            >Information Technology</a
+          >
+        </li>
+        <div id="it" class="department-details">
+            <h3>Information Technology</h3>
+            <p>The Department has well qualified, highly experienced and dedicated team of faculty, which includes three Professors with Doctorates and five Associate Professors. The teaching and research activity of the Department is supported by a team of Professors, Associate Professors and Assistant Professors who provide and maintain high standards of teaching and learning.</p>
+          </div>
+      
+
+
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('mech')"
+            >Mechanical Engineering</a
+          >
+        </li>
+        <div id="mech" class="department-details">
+            <h3>Mechanical Engineering</h3>
+            <p>The department of mechanical engineering functions with the prime goal of imparting sound and proper mix of theory and practical courses in the fundamentals and recent technological developments of mechanical engineering and allied disciplines to the students so that the students, on completion of the course, get good opportunities in industries and higher education.
+                The other objectives of the department are: promotion of research and development activities, providing consultancy services to the Industries and Conducting continuing education programs.
+                The department has highly qualified and experienced faculty members .The department regularly organizes technical workshops for the faculty members to expose them to emerging areas.The department has the state of the art facilities for various laboratories, classrooms to support e-learning .</p>
+          </div>
+        
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('freshman')"
+            >Freshman Engineering</a
+          >
+        </li>
+        <div id="freshman" class="department-details">
+            <h3>Freshman Engineering</h3>
+            <p>This department was established with a view to consolidating basics of sciences and English language. The courses have been designed to strengthen the fundamental principles to enable the students comprehend the core engineering subjects.
+                The conceptual learning in these subjects is enhanced through practical lab sessions. As part of English language teaching, life skills are imparted enabling the students to improve their marketability and employability. The department has a well established multimedia language lab with advanced licensed software to equip the students to be effective communicators.
+                
+                </p>
+          </div>
+        <li>
+          <a href="javascript:void(0)" onclick="toggleDepartment('mba')"
+            >Master of Business Administration</a
+          >
+        </li>
+        <div id="mba" class="department-details">
+            <h3>Master of Business Administration</h3>
+            <p>In order to meet the wide ranging, challenging and growing demands for professional Managers, in the recent times, from both the developing and the developed Nations, the Department of Business Management was established in the year 2006-07, as an exclusive Department and as a separate entity.
+                The Objective of the Institution is to provide “Management Education” and promote the growth of effective and efficient “Business Managers” through adherence of the highest Standards of Academic Integrity and overall Ethical Conduct, to develop a sense of Individual Responsibility and to collectively participate in reinforcing and maintaining an environment of honour, trust and standards.
+                The Department strives to develop long term relationships with industries and market the Students Talents effectively; the students are thus provided high level leads and career pathways that enable them to gain access to a broad range of high potential MBA Career Opportunities.
+                Even though the Department is very young; it has made a name for itself, among the top few colleges, at the university level, through its performance in the examinations and in placement.</p>
+          </div>
+        </div>
+      </ul>
+
+    <script>
+      // Function to toggle department details visibility
+      function toggleDepartment(department) {
+        const departmentDetails = document.querySelectorAll(
+          ".department-details"
+        );
+        departmentDetails.forEach(function (detail) {
+          if (detail.id === department) {
+            detail.style.display =
+              detail.style.display === "none" ? "block" : "none";
+          } else {
+            detail.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

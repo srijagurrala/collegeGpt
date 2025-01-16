@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clubs - VBIT</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* General Styles */
+      body {
+        background-color: black;
+        color: white;
+        font-family: Manrope, sans-serif;
+        margin: 0;
+        text-align: center;
+      }
+      .header {
+        background: black;
+        text-align: right;
+        padding: 10px 20px;
+      }
+      .nav-links {
+        color: white;
+        font-family: Calibri;
+        font-size: 20px;
+      }
+      .button {
+        margin-left: 16px;
+        border-radius: 15px;
+        padding: 6px 10px;
+        background-color: red;
+        border: none;
+        font-size: 20px;
+        font-family: Calibri;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 60px;
+        font-family: "Georgia", Times, serif;
+        margin-top: 60px;
+      }
+      h2 {
+        text-align: center;
+        font-family: Times, serif;
+      }
+      h3 {
+        font-family: "Georgia", Times, serif;
+        color: orange;
+      }
+      .updates-section {
+        margin-top: 40px;
+        text-align: left;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .updates-section h2 {
+        color: #ffcc00;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      .update-item {
+        background-color: #444;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+      .update-item h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #ffcc00;
+      }
+      .update-item p {
+        font-size: 18px;
+        color: #ddd;
+        margin: 5px 0;
+      }
+      .clubs-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+      }
+
+      .clubs-section h2 {
+        color: #ffcc00;
+        font-size: 28px;
+        margin-bottom: 10px; /* Add spacing between the header and list */
+      }
+
+      .clubs-section ul {
+        list-style-type: none;
+
+        padding: 0;
+        text-align: center;
+      }
+
+      .clubs-section ul li {
+        color: #ddd;
+        font-size: 18px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}">HOME</a>&nbsp;
+        <a href="{{ url_for('about') }}">ABOUT</a>&nbsp;
+        <a href="{{ url_for('courses') }}">COURSES</a>&nbsp;
+        <a href="{{ url_for('signup') }}">
+          <button class="button">SIGN UP</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Latest Updates Section -->
+    <div class="updates-section">
+      <h2>Latest Updates</h2>
+
+      <div class="update-item">
+        <h3>Robotics Club Event</h3>
+        <p>
+          Join the Robotics Workshop this Saturday at 10:00 AM in the Innovation
+          Hall.
+        </p>
+      </div>
+
+      <div class="update-item">
+        <h3>TEDX VBIT Conference</h3>
+        <p>
+          Don't miss the TEDx event featuring inspiring talks on innovation and
+          technology!
+        </p>
+      </div>
+
+      <div class="update-item">
+        <h3>Street Cause Fundraiser</h3>
+        <p>
+          Help us raise funds for the local community projects. Join us on
+          Friday!
+        </p>
+      </div>
+    </div>
+
+    <!-- Active Clubs & Forums Section -->
+    <div class="clubs-section">
+      <h2>Our Active Clubs & Forums</h2>
+
+      <h3>Academic Forums</h3>
+      <ul>
+        <li>Branch Associations</li>
+        <li>Professional Bodies</li>
+        <li>IEEE</li>
+        <li>IETE</li>
+        <li>SAE</li>
+        <li>IGBC</li>
+      </ul>
+
+      <h3>Co-curricular Forums</h3>
+      <ul>
+        <li>Google Crowdsource</li>
+        <li>Data Vedhi</li>
+        <li>Abhedya</li>
+        <li>Ganith</li>
+        <li>Coding Studio</li>
+        <li>Epsilon Pi</li>
+        <li>Shodh</li>
+        <li>ISE</li>
+        <li>Robotics</li>
+        <li>ELITE</li>
+      </ul>
+
+      <h3>Extracurricular Forums</h3>
+      <ul>
+        <li>NSS</li>
+        <li>MUN</li>
+        <li>TEDX VBIT</li>
+        <li>Stutalk</li>
+        <li>Chitrika</li>
+        <li>Street Cause</li>
+        <li>Virinchi</li>
+        <li>Freaks United</li>
+        <li>Eco club</li>
+        <li>Aashay X Cast</li>
+        <li>Shrishti</li>
+      </ul>
+    </div>
+  </body>
+</html>
